@@ -37,7 +37,7 @@ proj2test target = do
 {- | Given a target, guess and guess count, continue guessing
 until the right target is guessed.
 -}
-loop :: [Location] -> [Location] -> ShipGuesser.GameState -> Int -> IO ()
+loop :: [Location] -> [Location] -> GameState -> Int -> IO ()
 loop target guess other guesses = do
   putStrLn $ "Your guess #" ++ show guesses ++ ":  " ++ showLocations guess
   let answer = feedback target guess
