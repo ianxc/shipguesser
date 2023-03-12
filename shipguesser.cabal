@@ -31,7 +31,7 @@ executable shipguesser
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base ^>=4.16.4.0
+    build-depends:    base >=4.16.4.0
     hs-source-dirs:   ./
     default-language: Haskell2010
     ghc-options:      -O2 -threaded
@@ -42,7 +42,7 @@ executable shipguesser-fig
     -- Modules included in this executable, other than Main.
     other-modules:    ShipGuesser
 
-    build-depends:    base ^>=4.16.4.0
+    build-depends:    base >=4.16.4.0
     hs-source-dirs:   ./
     default-language: Haskell2010
     ghc-options:      -O2 -threaded -main-is FindInitialGuess
