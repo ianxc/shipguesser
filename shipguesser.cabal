@@ -1,0 +1,48 @@
+cabal-version:      2.4
+name:               shipguesser
+version:            1.0
+
+-- A short (one-line) description of the package.
+synopsis: ShipGuesser - a quick guesser to find 3 battleships on a board.
+
+-- A longer description of the package.
+description: 
+    ShipGuesser is a solver/guesser for a simple game to find 3 
+    battleships on a board in as few guesses as possible (< 6 guesses, typically 4).
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+license:            MIT
+author:             Ian Chen
+maintainer:         ianchen7777@gmail.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
+-- extra-source-files:
+
+executable shipguesser
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    other-modules:    ShipGuesser
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.16.4.0
+    hs-source-dirs:   ./
+    default-language: Haskell2010
+    ghc-options:      -O2 -threaded
+    
+executable shipguesser-fig
+    main-is:          FindInitialGuess.hs
+
+    -- Modules included in this executable, other than Main.
+    other-modules:    ShipGuesser
+
+    build-depends:    base ^>=4.16.4.0
+    hs-source-dirs:   ./
+    default-language: Haskell2010
+    ghc-options:      -O2 -threaded -main-is FindInitialGuess
