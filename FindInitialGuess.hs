@@ -4,13 +4,14 @@ Purpose : Helper logic to find the best initial guess
           for a particular implemented strategy.
 -}
 
+{-# OPTIONS_GHC -Wno-type-defaults #-}
+
 module FindInitialGuess where
 
 import           Data.Char   (intToDigit)
 import           Data.List   (sort, tails)
 import           Data.Maybe  (fromJust)
-import           ShipGuesser (GameState, Location, feedback, fromLocation,
-                              initialGuess, nextGuess, toLocation)
+import           ShipGuesser (GameState, Location, feedback, nextGuess, toLocation)
 import           System.Exit ()
 
 {- | Results with fewest guesses given target [C3, D4, F3]:
@@ -55,8 +56,8 @@ testAllInitial target = map (\i -> (loopStart target i, i))
 
 -- | The driver for the initial guess.
 loopStart :: [Location] -> [Location] -> Int
-loopStart target init = do
-  loop target init initialState 1
+loopStart target initial = do
+  loop target initial initialState 1
 
 {- | Continue guessing until triplet guessed correctly, short circuit quicker
 on reaching count > 5 since we are aiming for low counts. (Although this
