@@ -24,15 +24,17 @@ jobs:
           cache-name: cache-cabal
         with:
           path: ~/.cabal
-          key:
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{
-            hashFiles('**/*.cabal') }}-${{ hashFiles('**/cabal.project') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{hashFiles('**/*.cabal') }}-${{ hashFiles('**/cabal.project') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
       - uses: haskell/actions/setup@v2
+        with:
+          ghc-version: "9.2"
+          cabal-version: "3.6"
+
       - uses: haskell/actions/hlint-setup@v2
       - uses: haskell/actions/hlint-run@v2
         with:

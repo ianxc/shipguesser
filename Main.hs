@@ -9,6 +9,7 @@ import           ShipGuesser (GameState, Location, feedback, fromLocation,
                               initialGuess, nextGuess, toLocation)
 import           System.Exit (exitFailure)
 
+testCase :: String
 testCase = "F1 D2 G4"
 
 {- | Main code to test implementations with the Grok runner. This will be run with

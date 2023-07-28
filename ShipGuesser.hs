@@ -30,6 +30,9 @@ that match the target triplet i.e. the entire guess matches.
 
 Exports functions and data types to be used externally, in the testing code.
 -}
+
+{-# OPTIONS_GHC -Wno-type-defaults #-}
+
 module ShipGuesser
   (
     GameState,
